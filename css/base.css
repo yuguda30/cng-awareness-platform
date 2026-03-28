@@ -1,0 +1,172 @@
+/* =========================
+   RESET & GLOBAL SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: #f9fafb;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   COLOR VARIABLES (THEME)
+========================= */
+
+:root {
+    --primary-color: #16a34a;
+    /* Green (CNG theme) */
+    --secondary-color: #0f172a;
+    /* Dark navy */
+    --accent-color: #22c55e;
+    /* Light green */
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #ffffff;
+    --bg-section: #f3f4f6;
+    --border-radius: 12px;
+    --transition: 0.3s ease;
+}
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background-color: #15803d;
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn.secondary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+
+/* =========================
+   SECTION STYLING
+========================= */
+
+section {
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================
+   UTILITIES
+========================= */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* =========================
+   SCROLLBAR (OPTIONAL UI)
+========================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e5e7eb;
+}

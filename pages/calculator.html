@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNG Savings Calculator</title>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        body {
+            background: #f4f8f6;
+        }
+        
+        .calculator-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 30px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .calculator-container h2 {
+            text-align: center;
+            color: #2e8b57;
+        }
+        
+        .calculator-container label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        .calculator-container input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        .calculator-container button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .calculator-container button:hover {
+            background: #246b45;
+        }
+        
+        .result-box {
+            margin-top: 20px;
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .result-box h3 {
+            color: #2e8b57;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="topbar">
+        <h1 class="top">CNG Awareness Platform</h1>
+        <img src="../assets/icons/naija1.png" class="flag">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <nav class="menu">
+        <a href="../index.html">Home</a>
+        <a href="what-is-cng.html">What is CNG?</a>
+        <a href="benefits.html">Benefits</a>
+        <a href="safety-tips.html">Safety</a>
+        <a href="conversion-guide.html">Conversion</a>
+        <a href="news.html">News</a>
+        <a class="active">Calculator</a>
+    </nav>
+
+    <!-- CALCULATOR -->
+    <div class="calculator-container">
+
+        <h2>CNG Savings Calculator</h2>
+
+        <label>Daily Distance (km)</label>
+        <input type="number" id="distance" placeholder="e.g. 50">
+
+        <label>Petrol Price (₦ per litre)</label>
+        <input type="number" id="petrolPrice" placeholder="e.g. 650">
+
+        <label>CNG Price (₦ per unit)</label>
+        <input type="number" id="cngPrice" placeholder="e.g. 250">
+
+        <label>Vehicle Efficiency (km per litre)</label>
+        <input type="number" id="efficiency" placeholder="e.g. 12">
+
+        <button onclick="calculateSavings()">Calculate Savings</button>
+
+        <div class="result-box" id="result" style="display:none;">
+            <h3>Results</h3>
+            <p id="petrolCost"></p>
+            <p id="cngCost"></p>
+            <p id="savings"></p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p class="top">
+            © 2026 CNG Awareness Platform | Promoting Clean Energy in Nigeria 🇳🇬
+        </p>
+    </footer>
+
+
+    <!-- SCRIPT -->
+    <script>
+        function calculateSavings() {
+            let distance = document.getElementById('distance').value;
+            let petrolPrice = document.getElementById('petrolPrice').value;
+            let cngPrice = document.getElementById('cngPrice').value;
+            let efficiency = document.getElementById('efficiency').value;
+
+            if (!distance || !petrolPrice || !cngPrice || !efficiency) {
+                alert("Please fill all fields");
+                return;
+            }
+
+            let fuelUsed = distance / efficiency;
+            let petrolCost = fuelUsed * petrolPrice;
+            let cngCost = fuelUsed * cngPrice;
+            let savings = petrolCost - cngCost;
+
+            document.getElementById('petrolCost').innerText = "Petrol Cost: ₦" + petrolCost.toFixed(2);
+            document.getElementById('cngCost').innerText = "CNG Cost: ₦" + cngCost.toFixed(2);
+            document.getElementById('savings').innerText = "You Save: ₦" + savings.toFixed(2);
+
+            document.getElementById('result').style.display = "block";
+        }
+    </script>
+
+</body>
+<script src="../js/main.js"></script>
+
+</html>

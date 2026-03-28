@@ -1,0 +1,177 @@
+/* =========================
+   INITIAL STATES (HIDDEN)
+========================= */
+
+.fade-in,
+.slide-up,
+.slide-left,
+.slide-right,
+.scale-in {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+
+/* =========================
+   ANIMATE TRIGGER
+========================= */
+
+.animate {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+
+/* =========================
+   FADE IN
+========================= */
+
+.fade-in {
+    transform: translateY(20px);
+}
+
+.fade-in.animate {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   SLIDE UP
+========================= */
+
+.slide-up {
+    transform: translateY(40px);
+}
+
+.slide-up.animate {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   SLIDE LEFT
+========================= */
+
+.slide-left {
+    transform: translateX(-40px);
+}
+
+.slide-left.animate {
+    transform: translateX(0);
+}
+
+
+/* =========================
+   SLIDE RIGHT
+========================= */
+
+.slide-right {
+    transform: translateX(40px);
+}
+
+.slide-right.animate {
+    transform: translateX(0);
+}
+
+
+/* =========================
+   SCALE IN (ZOOM)
+========================= */
+
+.scale-in {
+    transform: scale(0.9);
+}
+
+.scale-in.animate {
+    transform: scale(1);
+}
+
+
+/* =========================
+   HOVER ANIMATIONS
+========================= */
+
+
+/* Card hover */
+
+.feature-card:hover,
+.news-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+
+/* Button hover smooth */
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   STAGGER DELAYS (OPTIONAL)
+========================= */
+
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+}
+
+
+/* =========================
+   SMOOTH IMAGE ANIMATION
+========================= */
+
+.hero-image img {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   FADE IN ON LOAD (HERO)
+========================= */
+
+.hero {
+    animation: fadeHero 1s ease forwards;
+}
+
+@keyframes fadeHero {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card img {
+    transition: 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}

@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    .bottom-panels {
+        flex-direction: column;
+    }
+}
