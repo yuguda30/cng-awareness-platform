@@ -1,0 +1,309 @@
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            margin: 0;
+        }
+        /* TOP BAR */
+        
+        .topbar {
+            background: #1e7d4f;
+            color: white;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            align-items: center;
+        }
+        
+        .top {
+            color: white;
+        }
+        
+        .flag {
+            width: 50px;
+        }
+        /* HEADER */
+        
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        /* MENU (MAKE IT STICK UNDER HEADER) */
+        
+        .menu {
+            position: fixed;
+            top: 70px;
+            /* adjust based on header height */
+            width: 100%;
+            background: white;
+            padding: 10px 30px;
+            display: flex;
+            gap: 25px;
+            border-bottom: 1px solid #ddd;
+            z-index: 999;
+        }
+        /* PUSH CONTENT DOWN */
+        
+        body {
+            padding-top: 120px;
+            /* header + menu height */
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: white;
+        }
+        
+        .menu {
+            display: flex;
+            gap: 25px;
+        }
+        /* --- BASE STYLES (DESKTOP) --- */
+        
+        .menu {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: #555;
+        }
+        
+        .menu .active {
+            color: green;
+            font-weight: bold;
+        }
+        
+        .menu-toggle {
+            display: none;
+            /* Hides the hamburger menu on desktop */
+            font-size: 26px;
+            cursor: pointer;
+            color: white;
+        }
+        /* --- MOBILE STYLES --- */
+        
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                /* Hides the standard menu on mobile */
+                flex-direction: column;
+                position: absolute;
+                /* Keeps it attached to the header */
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                z-index: 1000;
+                /* Added this so the menu drops down ON TOP of your car image, not behind it */
+                padding-bottom: 15px;
+                /* Adds a little breathing room at the bottom */
+            }
+            .menu.active {
+                display: flex;
+                /* Shows the menu when JS adds the 'active' class */
+            }
+            .menu-toggle {
+                display: block;
+                /* Shows the hamburger menu on mobile */
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+        }
+        /* DASHBOARD */
+        
+        .dashboard {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+        /* MAIN */
+        
+        .main-content {
+            flex: 3;
+        }
+        /* HERO */
+        
+        .hero {
+            position: relative;
+        }
+        
+        .hero img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            color: white;
+        }
+        
+        .hero-overlay button {
+            background: white;
+            padding: 10px 20px;
+            border: none;
+            margin-top: 10px;
+        }
+        
+        .white {
+            color: white;
+        }
+        
+        .grin {
+            color: black;
+        }
+        
+        .gri {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+        
+        .gre {
+            color: rgb(6, 206, 6);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        /* CARDS */
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .card img {
+            width: 60px;
+        }
+        
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            background: green;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+        }
+        /* PANELS */
+        /* PANELS CONTAINER */
+        
+        .bottom-panels {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        /* PANEL STYLE */
+        
+        .panel {
+            flex: 1;
+            border-radius: 10px;
+            color: white;
+            padding: 20px;
+        }
+        /* COLORS */
+        
+        .panel.green {
+            background: linear-gradient(135deg, #2e8b57, #3cb371);
+        }
+        
+        .panel.blue {
+            background: linear-gradient(135deg, #1e6ea7, #3498db);
+        }
+        /* CONTENT LAYOUT */
+        
+        .panel-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        /* ICON */
+        
+        .panel-icon {
+            width: 60px;
+            height: 60px;
+        }
+        /* TEXT */
+        
+        .panel-text h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+        /* BUTTON */
+        
+        .panel-text button {
+            background: white;
+            color: #333;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* HOVER EFFECT */
+        
+        .panel-text button:hover {
+            background: #f1f1f1;
+        }
+        
+        .down {
+            color: white;
+        }
+        /* SIDEBAR */
+        
+        .sidebar {
+            flex: 1.2;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .sidebar ul {
+            padding-left: 20px;
+        }
+        
+        .view-news {
+            display: block;
+            margin-top: 10px;
+            background: green;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            text-decoration: none;
+        }
+        /* =========================
+   FOOTER
+========================= */
+        
+        .footer {
+            background: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 4px;
+            margin-top: 0px;
+            font-size: 14px;
+            padding: 4px;
+            margin-top: 0px;
+            font-size: 14px;
+        }
